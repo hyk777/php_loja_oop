@@ -9,11 +9,8 @@ class Produto {
 	public $categoria;
 	public $usado;
 
-	public function precoComDesconto($valor = 0.1){
-		if ($valor > 0 && $valor <= 0.5) {
-			$this->preco -= $this->preco * $valor;
-		}
-		return $this->preco;
+	public function precoComDesconto($valor){
+		return $this->preco - ($this->preco * $valor);
 	}
 }
 
