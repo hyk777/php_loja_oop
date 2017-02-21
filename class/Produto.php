@@ -23,9 +23,9 @@ class Produto {
 
 	public function precoComDesconto($valor = 0.1){
 		if ($valor > 0 && $valor <= 0.5){
-			$this->setPreco($this->preco - $this->preco * $valor);
+			return $this->preco - ($this->preco * $valor);
 		}
-		//return $this->preco - ($this->preco * $valor);
+
 		return $this->preco;
 	}
 

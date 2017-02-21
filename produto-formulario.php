@@ -4,15 +4,17 @@ require_once("banco-categoria.php");
 require_once("logica-usuario.php");
 require_once("class/Produto.php");
 require_once("class/Categoria.php");
+require_once("class/CategoriaDAO.php");
 
 verificaUsuario();
 
+$categoriaDao = new CategoriaDao($conexao);
 $categoria = new Categoria();
 $categoria->setId(1);
 
 $produto = new Produto($nome, $preco, $descricao, $categoria, $usado);
 
-$categorias = listaCategorias($conexao);
+$categorias = $categoriaDao->listaCategorias();
 
 ?>	
 
